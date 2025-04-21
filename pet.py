@@ -1,3 +1,4 @@
+import pet
 import time
 
 class Pet:
@@ -21,7 +22,7 @@ class Pet:
          self.hunger = 0
      self.happiness = min(self.happiness + 1, 10)
      time.sleep(2)
-     print(f"{self.name} has eaten🎉.")
+     print(f"{self.name} has eaten.")
      time.sleep(1)
 
     def sleep(self):
@@ -38,7 +39,7 @@ class Pet:
             self.hunger = min(self.hunger + 1, 10)
             print("You played with your pet.")
         else:
-            print(f"{self.name} is too tired to play😔.")
+            print(f"{self.name} is too tired to play.")
     
     def sleep(self):
         """Increases energy by 5 but doesn't go beyond 10"""
@@ -47,7 +48,7 @@ class Pet:
 
     def get_status(self):
         """Prints the current status of the pet"""
-        print(f"\n{self.name}'s current status: \n🍚 Hunger: {self.hunger}\n⚡ Energy: {self.energy}\n🐱 Happiness: {self.happiness}\n🎃 Tricks: {', '.join(self.tricks) if self.tricks else f'{self.name} doesn\'t know any tricks yet.'}")
+        print(f"\n{self.name}'s current status: \n Hunger: {self.hunger}\n Energy: {self.energy}\n Happiness: {self.happiness}\n Tricks: {', '.join(self.tricks) if self.tricks else f'{self.name} doesn\'t know any tricks yet.'}")
         time.sleep(5)
 
     def train(self, trick):
@@ -56,14 +57,14 @@ class Pet:
             print(f"{self.name} already knows '{trick}'.")
         else:
             self.tricks.append(trick)
-            print(f"\nSuccessfully taught {self.name} the trick '{trick}🎉'!")
+            print(f"\nSuccessfully taught {self.name} the trick '{trick}'!")
             time.sleep(4)
             
     def show_tricks(self):
         # Show the pet's tricks
         if not self.tricks:
-            print(f"{self.name} doesn't know any tricks yet😔.")
+            print(f"{self.name} doesn't know any tricks yet.")
         else:
             print(f"\n{self.name}'s tricks:")
             for i, trick in enumerate(self.tricks, 1):
-                print(f"{i}. 🎃 {trick}")
+                print(f"{i}.  {trick}")
